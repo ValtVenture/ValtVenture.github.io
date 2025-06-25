@@ -11,6 +11,21 @@
       color: #e0e0e0;
       font-family: Consolas, monospace;
       padding: 2rem;
+      padding-top: 4.5rem;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #111;
+      color: #00c4cc;
+      font-size: 1.5rem;
+      padding: 1rem 0;
+      text-align: center;
+      font-weight: bold;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
     }
     h1 {
       color: #00c4cc;
@@ -36,7 +51,7 @@
   </style>
 </head>
 <body>
-  <h1>💻 Host Server</h1>
+  <div class="header">💻 Host Server</div>
   <ul>
     <li>🔐 <strong>ExploitModule_01.bin</strong></li>
     <li>🔐 <strong>PayloadConfig_02.bin</strong></li>
