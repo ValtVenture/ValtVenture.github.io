@@ -22,7 +22,7 @@
     }
     .glow-fade {
       position: fixed;
-      top: 20px;
+      top: 80px;
       left: 50%;
       transform: translateX(-50%);
       background: #1a1a1a;
@@ -34,6 +34,8 @@
       box-shadow: 0 0 10px #ff3333;
       animation: fadeInSlide 3.5s ease-in-out;
       z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
     }
     @keyframes fadeInSlide {
       0% { opacity: 0; transform: translate(-50%, -10px); }
@@ -139,12 +141,21 @@
           d.removeAttribute("open");
         }
       });
-      
+
       const warning = document.getElementById("access-warning");
       if (warning) {
-        warning.style.display = "none";
+        warning.style.animation = 'none';
         void warning.offsetWidth;
-        warning.style.display = "block";
+        warning.style.animation = 'fadeInSlide 3.5s ease-in-out';
+       
+  clearTimeout(warning.hideTimeout);
+        warning.style.opacity = '1';
+        warning.style.display = 'block';
+        warning.hideTimeout =
+  setTimeout(() => {
+          warning.style.display = 'none';
+          warning.style.opacity = '0';
+        }, 3500);
       }
     }
   </script>
