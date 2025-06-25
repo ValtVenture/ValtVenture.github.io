@@ -20,6 +20,27 @@
       font-weight: bold;
       box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
     }
+    .glow-fade {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1a;
+      color: #ff4d4d;
+      padding: 10px 20px;
+      border: 1px solid #ff1a1a;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      box-shadow: 0 0 10px #ff3333;
+      animation: fadeInSlide 3.5s ease-in-out;
+      z-index: 9999;
+    }
+    @keyframes fadeInSlide {
+      0% { opacity: 0; transform: translate(-50%, -10px); }
+      20% { opacity: 1; transform: translate(-50%, 0); }
+      80% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, -5px); }
+    }
     summary {
       color: #00c4cc;
       font-size: 1.1rem;
@@ -118,7 +139,17 @@
           d.removeAttribute("open");
         }
       });
+      
+      const warning = document.getElementById("access-warning");
+      if (warning) {
+        warning.style.display = "none";
+        void warning.offsetWidth;
+        warning.style.display = "block";
+      }
     }
   </script>
+  <div id="access-warning" class="glow-fade" style="display: none;">
+    🚫 Unauthorized Access Detected — Terminal Encrypted
+  </div>
 </body>
 </html>
