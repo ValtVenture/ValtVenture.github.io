@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🧠 Host Node | Core File Access</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      font-family: Consolas, monospace;
+      padding: 2rem;
+    }
+    .header {
+      background-color: #111;
+      color: #ff4d4d;
+      font-size: 1.4rem;
+      padding: 1rem;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
+    }
+    summary {
+      color: #00c4cc;
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+      cursor: pointer;
+    }
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+    li {
+      margin: 0.3rem 0;
+      color: #9efeff;
+    }
+    a {
+      color: #9efeff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .glow-warning {
+      color: #ff4d4d;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+      animation: glowPulse 4s infinite;
+    }
+    @keyframes glowPulse {
+      0%, 100% { text-shadow: 0 0 0 #000; }
+      50% { text-shadow: 0 0 8px #ff3333, 0 0 20px #ff0000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">⚙️ Terminal Interface: Core Node Access</div>
+
+  <details>
+    <summary onclick="closeOthers(this)">📁 /SysCore_block</summary>
+    <ul>
+      <li>🔐 <a href="SysCore_block/ExploitModule_01.bin" download>ExploitModule_01.bin</a></li>
+      <li>🔐 <a href="SysCore_block/PayloadConfig_02.bin" download>PayloadConfig_02.bin</a></li>
+      <li>🔐 <a href="SysCore_block/CoreEngine_03.bin" download>CoreEngine_03.bin</a></li>
+      <li>🔐 <a href="SysCore_block/StackTrace_04.bin" download>StackTrace_04.bin</a></li>
+    </ul>
+  </details>
+
+  <details>
+    <summary onclick="closeOthers(this)">📁 /AccessControl</summary>
+    <ul>
+      <li>🔐 <a href="AccessControl/InjectionStub_05.bin" download>InjectionStub_05.bin</a></li>
+      <li>🔐 <a href="AccessControl/BypassPatch_07.bin" download>BypassPatch_07.bin</a></li>
+      <li>🔐 <a href="AccessControl/AuthBypass_11.bin" download>AuthBypass_11.bin</a></li>
+      <li>🔐 <a href="AccessControl/BackdoorEntry_17.bin" download>BackdoorEntry_17.bin</a></li>
+    </ul>
+  </details>
+
+  <details>
+    <summary onclick="closeOthers(this)">📁 /NetModules</summary>
+    <ul>
+      <li>🔐 <a href="NetModules/SessionDump_06.bin" download>SessionDump_06.bin</a></li>
+      <li>🔐 <a href="NetModules/NetTunnel_12.bin" download>NetTunnel_12.bin</a></li>
+      <li>🔐 <a href="NetModules/ProxyChain_19.bin" download>ProxyChain_19.bin</a></li>
+      <li>🔐 <a href="NetModules/RootSocket_18.bin" download>RootSocket_18.bin</a></li>
+    </ul>
+  </details>
+
+  <details>
+    <summary onclick="closeOthers(this)">📁 /CryptoEngines</summary>
+    <ul>
+      <li>🔐 <a href="CryptoEngines/CipherModule_08.bin" download>CipherModule_08.bin</a></li>
+      <li>🔐 <a href="CryptoEngines/KeyHandler_09.bin" download>KeyHandler_09.bin</a></li>
+      <li>🔐 <a href="CryptoEngines/KernelMap_16.bin" download>KernelMap_16.bin</a></li>
+      <li>🔐 <a href="CryptoEngines/SandboxBlock_20.bin" download>SandboxBlock_20.bin</a></li>
+    </ul>
+  </details>
+
+  <details>
+    <summary onclick="closeOthers(this)">📁 /BotSubsystem</summary>
+    <ul>
+      <li>🔐 <a href="BotSubsystem/ScriptCache_10.bin" download>ScriptCache_10.bin</a></li>
+      <li>🔐 <a href="BotSubsystem/BotNode_13.bin" download>BotNode_13.bin</a></li>
+      <li>🔐 <a href="BotSubsystem/DebuggerLog_14.bin" download>DebuggerLog_14.bin</a></li>
+      <li>🔐 <a href="BotSubsystem/ShellDaemon_15.bin" download>ShellDaemon_15.bin</a></li>
+    </ul>
+  </details>
+
+  <p class="glow-warning">
+    🛡️ Terminal Encrypted — Unauthorized Access Prohibited
+  </p>
+
+  <script>
+    function closeOthers(currentSummary) {
+      document.querySelectorAll("details").forEach(d => {
+        if (d.querySelector("summary") !== currentSummary) {
+          d.removeAttribute("open");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
