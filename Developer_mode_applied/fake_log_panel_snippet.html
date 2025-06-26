@@ -1,0 +1,46 @@
+
+<!-- View Logs Trigger -->
+<p style="text-align: center; margin-top: 2rem;">
+  <a href="#" onclick="showLogPanel()" style="color: #00c4cc; text-decoration: underline;">📂 View Logs</a>
+</p>
+
+<!-- Log Panel -->
+<div id="log-panel" style="display: none; max-width: 90%; margin: 1rem auto; background-color: #111; padding: 1rem; border: 1px solid #444; border-radius: 6px; font-family: monospace; font-size: 0.9rem; color: #9efeff; box-shadow: 0 0 10px #00c4cc; overflow-y: auto; max-height: 300px; position: relative;">
+  <button onclick="closeLogPanel()" style="position: absolute; top: 5px; right: 10px; background: #222; color: #ff4d4d; border: none; padding: 3px 6px; font-size: 0.8rem; cursor: pointer;">✖ Close</button>
+  <div id="log-content"></div>
+</div>
+
+<script>
+  const logs = [
+    { delay: 500, text: "[ SYSLOG ] Initializing secure core monitor..." },
+    { delay: 900, text: "[ ACCESS ] Terminal handshake accepted from IP 127.0.0.1" },
+    { delay: 1300, text: "[ TRACE ] Logging dev packet for user session..." },
+    { delay: 1700, text: "[ STATUS ] Secure node status: OK" },
+    { delay: 2200, text: "[ ALERT ] Unverified script interaction detected at 17:24:09" },
+    { delay: 2700, text: "[ TRACE ] Hash seed: 91f31a2ddc8e4f3bff2a731db..." },
+    { delay: 3200, text: "[ SESSION ] Data channel opened in dev-mode: passive listen" },
+    { delay: 3700, text: "[ ACTION ] Writing output to kernel trace buffer..." },
+    { delay: 4200, text: "[ INFO ] Logs retained for 5-minute intervals only" }
+  ];
+
+  function showLogPanel() {
+    const panel = document.getElementById("log-panel");
+    const content = document.getElementById("log-content");
+    content.innerHTML = "";
+    panel.style.display = "block";
+    panel.scrollIntoView({ behavior: "smooth" });
+
+    logs.forEach((log, index) => {
+      setTimeout(() => {
+        const p = document.createElement("p");
+        p.textContent = log.text;
+        content.appendChild(p);
+        panel.scrollTop = panel.scrollHeight;
+      }, log.delay);
+    });
+  }
+
+  function closeLogPanel() {
+    document.getElementById("log-panel").style.display = "none";
+  }
+</script>
