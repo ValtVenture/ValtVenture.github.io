@@ -136,6 +136,18 @@
   <p style="color: #FF0000; margin-bottom: 2rem;">
     System has detected that you're not an authorised member of <strong>Venture Developer Community</strong> — Monitoring the live page for Security Concern !!
   </p>
+  <p style="text-align: center; margin-top: 2rem;">
+    <a href="#" onclick="showLogPanel()" style="color: #00c4cc; text-decoration: underline;">📂 View Logs</a>
+  </p>
+
+  <details id="log-container" style="max-width: 90%; margin: 1rem auto;">
+    <summary style="color: #ff9800; font-weight: bold; font-family: monospace;">🧭 Terminal Activity Log</summary>
+    <div id="log-panel" style="display: none; background-color: #111; padding: 1rem; border: 1px solid #444; border-radius: 6px; font-family: monospace; font-size: 0.9rem; color: #9efeff; box-shadow: 0 0 10px #00c4cc; overflow-y: auto; max-height: 300px; position: relative; margin-top: 1rem;">
+      <button onclick="closeLogPanel()" style="position: absolute; top: 5px; right: 10px; background: #222; color: #ff4d4d; border: none; padding: 3px 6px; font-size: 0.8rem; cursor: pointer;">✖ Close</button>
+      <div id="log-content"></div>
+      <div id="log-cursor" style="margin-top: 0.5rem; color: #00ffcc; font-weight: bold;">▊</div>
+    </div>
+  </details>
   <p style="color: #00FF00">
     You still are allowed to look over and download the files (but they'll remain <strong>Encrypted</strong>) though some files/folder access has been prohibited.<br>
   </p>
